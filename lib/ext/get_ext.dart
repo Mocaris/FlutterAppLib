@@ -7,14 +7,17 @@ import '../dialog/dialog.dart';
 extension GetExt on GetInterface {
   ///关闭当前页面第一个弹窗  dialog or bottomSheet or snakeBar
   dismiss<T>({T? result, int? id}) {
-    if (Get.isOverlaysOpen) {
+    if (Get.routing.route is! GetPageRoute) {
       Get.back<T>(result: result, closeOverlays: false, canPop: true, id: id);
     }
   }
 
   ///关闭当前 所有弹窗 包括 dialog bottomSheet snakeBar
   dismissAll() {
-    Get.until((route) => !Get.isOverlaysOpen);
+    if (Get.isSnackbarOpen) {
+      SnackbarController.cancelAllSnackbars();
+    }
+    Get.until((route) => route is GetPageRoute);
   }
 
   ///关闭当前页面 包括 当前页面的 dialog  bottomSheet snakeBar

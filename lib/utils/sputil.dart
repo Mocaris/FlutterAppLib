@@ -4,7 +4,7 @@ import 'package:get_storage/get_storage.dart';
 class SPUtil extends GetxController {
   static final SPUtil instance = SPUtil();
 
-  static final _configName = "AppPref";
+  static const _configName = "AppPref";
 
   static final GetStorage _box = GetStorage(_configName);
 
