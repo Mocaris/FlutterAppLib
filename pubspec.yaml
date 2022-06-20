@@ -1,6 +1,6 @@
 name: flutter_app_lib
 description: FlutterAppLib
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/Mocaris/flutter_app_lib.git
 
 environment:
@@ -19,7 +19,7 @@ dependencies:
   wechat_assets_picker: ^7.3.2
   wechat_camera_picker: ^3.2.0+1
   image_gallery_saver: ^1.7.1
-  permission_handler: ^9.2.0
+  permission_handler: ^10.0.0
   pull_to_refresh: ^2.0.0
   package_info: ^2.0.2
   video_compress: #^3.1.0
