@@ -1,5 +1,6 @@
-import 'package:flutter_utils/utils/date/date_format.dart';
 import 'package:intl/intl.dart' as intl;
+
+import 'date_format.dart';
 
 /// 字母	含义	示例
 /// y	年份。一般用 yy 表示两位年份，yyyy 表示 4 位年份	使用 yy 表示的年扮，如 11；使用 yyyy 表示的年份，如 2011
