@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_utils/flutter_utils.dart';
 import 'package:get/get.dart';
 
 import '../dialog/dialog.dart';
+import '../utils/key_board_util.dart';
+import '../widget/route/top_sheet_route.dart';
 
 extension GetExt on GetInterface {
   ///关闭当前页面第一个弹窗  dialog or bottomSheet or snakeBar
@@ -65,13 +66,14 @@ extension Alert on GetInterface {
     if (hideKeyboard) {
       KeyboardUtil.hideKeyboardUnFocus(Get.overlayContext!);
     }
-    return Navigator.of(overlayContext!, rootNavigator: useRootNavigator).push<T>(TopSheetRoute<T>(
-        builder: (_) => topSheet,
-        isScrollControlled: isScrollControlled,
-        ignoreSafeArea: ignoreSafeArea,
-        barrierColor: barrierColor,
-        offset: offset,
-        settings: routeSettings));
+    return Navigator.of(overlayContext!, rootNavigator: useRootNavigator)
+        .push<T>(TopSheetRoute<T>(
+            builder: (_) => topSheet,
+            isScrollControlled: isScrollControlled,
+            ignoreSafeArea: ignoreSafeArea,
+            barrierColor: barrierColor,
+            offset: offset,
+            settings: routeSettings));
   }
 
   Future<T?> showBottomSheet<T>(Widget bottomSheet,
@@ -112,8 +114,11 @@ extension Alert on GetInterface {
 
   ///buildContext is overlayContext
   showToast(String content,
-      {BuildContext? buildContext, TGravity gravity = TGravity.center, Duration duration = Toast.short}) {
-    Toast.show(buildContext ?? Get.overlayContext!, content, gravity: gravity, duration: duration);
+      {BuildContext? buildContext,
+      TGravity gravity = TGravity.center,
+      Duration duration = Toast.short}) {
+    Toast.show(buildContext ?? Get.overlayContext!, content,
+        gravity: gravity, duration: duration);
   }
 
   Future<T?> showToastDialog<T>(bool state, String content) {
@@ -121,10 +126,15 @@ extension Alert on GetInterface {
   }
 
   Future<T?> showLoadingDialog<T>(
-      {String? content, bool outsideDismiss = false, bool onBackDismiss = true, LoadingController? loadingController}) {
+      {String? content,
+      bool outsideDismiss = false,
+      bool onBackDismiss = true,
+      LoadingController? loadingController}) {
     return showDialog(
         LoadingDialog(content,
-            outsideDismiss: outsideDismiss, onBackDismiss: onBackDismiss, controller: loadingController),
+            outsideDismiss: outsideDismiss,
+            onBackDismiss: onBackDismiss,
+            controller: loadingController),
         barrierDismissible: false);
   }
 }

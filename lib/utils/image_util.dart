@@ -7,7 +7,7 @@ import 'package:video_compress/video_compress.dart';
 import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 import 'package:wechat_camera_picker/wechat_camera_picker.dart';
 
-import 'permissionutil.dart';
+import 'permission_util.dart';
 
 export 'package:wechat_assets_picker/wechat_assets_picker.dart';
 
