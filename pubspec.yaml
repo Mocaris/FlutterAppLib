@@ -31,7 +31,6 @@ dependencies:
     git:
       url: https://github.com/Mocaris/flutter_utils.git
       ref: master
-      branch: master
 
   get:
     git:
