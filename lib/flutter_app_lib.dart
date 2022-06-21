@@ -6,6 +6,7 @@ export 'formatter/input_formatter.dart';
 export 'utils/utils.dart';
 export 'widget/widgets.dart';
 export 'dialog/dialog.dart';
+export 'decoration/decoration.dart';
 
 export 'package:cupertino_icons/cupertino_icons.dart';
 export 'package:pull_to_refresh/pull_to_refresh.dart';
