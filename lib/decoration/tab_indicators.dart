@@ -7,7 +7,7 @@ class FixedUnderlineTabIndicator extends Decoration {
   final double? indicatorWidth;
   final double indicatorHeight;
 
-  FixedUnderlineTabIndicator({required this.color, this.radius = 2, this.indicatorWidth, this.indicatorHeight = 2});
+  const FixedUnderlineTabIndicator({required this.color, this.radius = 2, this.indicatorWidth, this.indicatorHeight = 2});
 
   @override
   BoxPainter createBoxPainter([VoidCallback? onChanged]) => _TabUnderlinePainter(this, onChanged);
